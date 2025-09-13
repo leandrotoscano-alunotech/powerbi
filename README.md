@@ -1,6 +1,8 @@
 Objetivo: “Análise da Selic com dados do BCB (CSV)”.
 
-Fontes: # Selic (diária) — série 11 (usar filtro de datas)
+Fontes:
+
+# Selic (diária) — série 11 (usar filtro de datas)
 https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?formato=csv&dataInicial=01/01/2015&dataFinal=31/12/2025
 
 # IPCA (% mensal) — série 433
