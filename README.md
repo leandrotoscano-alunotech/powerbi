@@ -4,12 +4,6 @@
 **Aluno:** Leandro Espada Toscano · **RA:** 2302581  
 **Data:** 15/09/2025
 
-## Links
-- **Board:** https://github.com/users/leandrotoscano-alunotech/projects/2/views/1
-- **Repositório:** https://github.com/leandrotoscano-alunotech/powerbi
-- **PBIX (AC1):** `powerbi/Indicadores-BCB-AC1.pbix`
-- **Vídeo da AC1:** _cole aqui o link do Loom/Drive_
-
 ---
 
 ## Visão geral (AC1)
