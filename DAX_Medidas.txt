@@ -1,0 +1,23 @@
+Calendario =
+ADDCOLUMNS(
+    CALENDAR(MIN(Selic[data]), MAX(Selic[data])),
+    "Ano", YEAR([Date]),
+    "Mes", MONTH([Date]),
+    "AnoMes", FORMAT([Date], "YYYY-MM")
+)
+
+Selic Mensal Média :=
+AVERAGEX(
+    VALUES(Calendario[AnoMes]),
+    CALCULATE(AVERAGE(Selic[selic]))
+)
+
+Selic M-1 :=
+CALCULATE([Selic Mensal Média], DATEADD(Calendario[Date], -1, MONTH))
+
+Selic MoM % :=
+DIVIDE([Selic Mensal Média] - [Selic M-1], [Selic M-1])
+
+Selic Mensal Média (%) := DIVIDE([Selic Mensal Média], 100)
+
+Atualizado até := MAX(Selic[data])
