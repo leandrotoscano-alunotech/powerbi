@@ -33,6 +33,3 @@ Dashboard em Power BI que monitora a **Taxa Selic (SGS/BCB — série 11)** agre
 2. Ajuste o **slicer de data**.  
 3. Leia o **KPI** e a **linha** para entender nível e tendência.  
 4. Confira o **“Atualizado até”** (última data dentro do recorte).
-
----
-**Data:** 17/09/2025
