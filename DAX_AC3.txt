@@ -1,0 +1,25 @@
+IBCBr Média Mês :=
+AVERAGEX (
+    VALUES ( 'Calendario'[Mes_Ano] ),
+    CALCULATE ( AVERAGE ( IBCBr[valor] ) )
+)
+
+IBCBr Var Mensal % :=
+VAR Atual =
+    CALCULATE ( SUM ( IBCBr[valor] ) )
+VAR Anterior =
+    CALCULATE (
+        SUM ( IBCBr[valor] ),
+        DATEADD ( 'Calendario'[Data], -1, MONTH )
+    )
+RETURN DIVIDE ( Atual - Anterior, Anterior )
+
+IBCBr Var Anual % :=
+VAR Atual =
+    CALCULATE ( SUM ( IBCBr[valor] ) )
+VAR AnoAnterior =
+    CALCULATE (
+        SUM ( IBCBr[valor] ),
+        DATEADD ( 'Calendario'[Data], -1, YEAR )
+    )
+RETURN DIVIDE ( Atual - AnoAnterior, AnoAnterior )
