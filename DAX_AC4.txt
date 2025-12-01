@@ -1,0 +1,29 @@
+# Medidas DAX | Indicadores do Brasil (BCB)
+
+-- (Coloque aqui as suas medidas DAX antigas, como IBCBr Média Mês, Selic Média Dia, etc.)
+--
+-- Exemplo de medida que você já deve ter:
+-- IBCBr Média Mês = AVERAGE('IBCBr'[valor]) 
+-- 
+
+# Medidas DAX adicionadas na etapa FINAL (Correlação e YoY)
+
+-- MEDIDA BASE IPCA (Geralmente a média mensal do valor)
+IPCA_Mensal_Valor =
+    AVERAGE('IPCA'[valor]) 
+    
+-- CÁLCULO IPCA - ANO ANTERIOR (SAMEPERIODLASTYEAR)
+IPCA_Ano_Anterior = 
+    CALCULATE(
+        [IPCA_Mensal_Valor],
+        SAMEPERIODLASTYEAR('Calendario'[Date])
+    )
+
+-- CÁLCULO IPCA - VARIAÇÃO YEAR-OVER-YEAR (YoY)
+IPCA_Variacao_YoY = 
+    DIVIDE(
+        ([IPCA_Mensal_Valor] - [IPCA_Ano_Anterior]),
+        [IPCA_Ano_Anterior]
+    )
+    
+-- OBSERVAÇÃO DE FORMATAÇÃO: A medida IPCA_Variacao_YoY deve ser formatada como 'Porcentagem (%)' no Power BI.
